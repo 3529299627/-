@@ -1,0 +1,28 @@
+// 层序遍历，从上到下，同一层从左到右访问顺序访问，核心用队列，先进先出，先访问父节点，再把它的左右孩子分别入队
+#include<stdio.h>
+#include<stdlib.h>
+#include<queue>
+#include<stack>
+using namespace td;
+
+struct TreeNode{
+char data;
+TreeNode* left;
+TreeeNode* right;
+
+};
+
+void levelOrder(struct TreeNode* root){
+queue<struct TreeNode*>que;
+if (root==NULL)return;
+que.push(root);
+while (!que.empty()){
+struct TreeNode*tmp=que.front();//建立临时指针拿顶出来看看，没删除，保存节点指针
+que.pop()//把队首删除，先进先出访问完就删除
+printf("%c",temp->data);
+if(tmp->left)
+  que.push(tmp->left)；
+  if(tmp->rigrht)
+  que.push(tmp->right);
+}
+}
